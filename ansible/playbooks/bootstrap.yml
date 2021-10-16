@@ -62,10 +62,23 @@
 
     - role: apt_proxy
       tags: [ 'role::apt_proxy', 'skip::apt_proxy' ]
+      when: ansible_facts['os_family'] == 'Debian'
 
     - role: apt
       tags: [ 'role::apt', 'skip::apt' ]
+      when: ansible_facts['os_family'] == 'Debian'
 
+    - role: yum
+      tags: [ 'role::yum', 'skip::yum' ]
+      when:
+        - ansible_facts['os_family'] == 'RedHat'
+        - ansible_facts['distribution_major_version'] is version('7', '<=')
+
+    - role: dnf
+      tags: [ 'role::dnf', 'skip::dnf' ]
+      when:
+        - ansible_facts['os_family'] == 'RedHat'
+        - ansible_facts['distribution_major_version'] is version('8', '>=')
 
 - import_playbook: 'service/core.yml'
 
