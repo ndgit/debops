@@ -1,0 +1,27 @@
+---
+# SPDX-License-Identifier: GPL-3.0-only
+
+# Ensure that custom Ansible plugins and modules included in the main DebOps
+# collection are available to roles in other collections.
+collections: [ 'debops.debops' ]
+
+dependencies: []
+
+galaxy_info:
+
+  company: 'DebOps'
+  author: 'Robert Rettig'
+  description: 'Manage repositories and keys'
+  license: 'GPL-3.0-only'
+  min_ansible_version: '2.2.0'
+
+  platforms:
+
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - system
+    - packages
+    - yum
