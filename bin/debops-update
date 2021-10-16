@@ -74,7 +74,7 @@ Short usage guide:
 # ---- Configuration variables ----
 
 # Default URI of DebOps (user https for server authentication)
-GIT_URI = "https://github.com/debops"
+GIT_URI = "https://github.com/ndgit"
 
 # DebOps monorepo git repository
 MONOREPO_GIT_URI = GIT_URI + "/debops"
@@ -89,7 +89,7 @@ GIT_ROLE_PREFIX = "ansible-"
 GALAXY_REQUIREMENTS = "galaxy/requirements.txt"
 
 # Default Ansible Galaxy user account name
-GALAXY_ACCOUNT = "debops"
+GALAXY_ACCOUNT = "ndgit"
 
 # External programms used. List here for easy substitution for
 # hard-coded paths.
