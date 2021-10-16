@@ -26,7 +26,7 @@ DebOps can be installed in different ways depending on your needs:
 
 - As a Python package in a Python :command:`virtualenv` environment. A given
   UNIX account can use different versions of DebOps by switching to each
-  :command:`virtualenv` environment.
+  :command:`virtualenv` environment. This is recommended for this repo.
 
 - As an Ansible Collection installed from the Ansible Galaxy using the
   :command:`ansible-galaxy` command. This is a good solution if you are
@@ -264,7 +264,7 @@ development packages:
 
 .. code-block:: console
 
-   sudo apt install build-essential python3-virtualenv virtualenv python3-dev \
+   sudo apt install build-essential python3-venv python3-dev \
                     libffi-dev libssl-dev libsasl2-dev libldap2-dev python3-pip
 
 After that, you can create a new Python :command:`virtualenv` environment in
@@ -272,7 +272,7 @@ a selected directory and "enter" it by executing the commands:
 
 .. code-block:: console
 
-   virtualenv ~/src/venv/debops
+   python3 -m venv ~/src/venv/debops
    cd ~/src/venv/debops
    source bin/activate
 
@@ -282,14 +282,14 @@ environment, you can run the command:
 
 .. code-block:: console
 
-   pip3 install debops[ansible]
+   python3 -m pip install -e git+https://github.com/ndgit/debops.git#egg=debops[ansible]
 
 Or, to install only DebOps without Ansible (for example, you want to use the
 Ansible from outside of the environment), you can execute the command:
 
 .. code-block:: console
 
-   pip3 install debops
+   python3 -m pip install -e git+https://github.com/ndgit/debops.git#egg=debops
 
 To exit the current Python virtual environment, you can run the command:
 
